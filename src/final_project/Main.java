@@ -22,7 +22,7 @@ public class Main extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);
         Login utama= new Login();
-        layar.add(utama);
+        jDesktopPane1.add(utama);
         utama.setVisible(true);
     }
     
@@ -46,11 +46,11 @@ public class Main extends javax.swing.JFrame {
         btn_bayar = new javax.swing.JButton();
         btn_akun = new javax.swing.JButton();
         layar = new javax.swing.JPanel();
+        jDesktopPane1 = new javax.swing.JDesktopPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Rental Mobil Alabama");
         setPreferredSize(new java.awt.Dimension(998, 585));
-        setResizable(false);
 
         jPanel2.setBackground(new java.awt.Color(237, 189, 17));
 
@@ -180,15 +180,26 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
+        javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
+        jDesktopPane1.setLayout(jDesktopPane1Layout);
+        jDesktopPane1Layout.setHorizontalGroup(
+            jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        jDesktopPane1Layout.setVerticalGroup(
+            jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 700, Short.MAX_VALUE)
+        );
+
         javax.swing.GroupLayout layarLayout = new javax.swing.GroupLayout(layar);
         layar.setLayout(layarLayout);
         layarLayout.setHorizontalGroup(
             layarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addComponent(jDesktopPane1)
         );
         layarLayout.setVerticalGroup(
             layarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 700, Short.MAX_VALUE)
+            .addComponent(jDesktopPane1)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -327,6 +338,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JButton btn_bayar;
     private javax.swing.JButton btn_home;
     private javax.swing.JButton btn_transaksi;
+    private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel layar;

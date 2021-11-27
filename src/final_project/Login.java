@@ -9,6 +9,7 @@ import java.awt.Color;
 import javax.swing.plaf.InternalFrameUI;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 import final_project.Home;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -22,7 +23,7 @@ public class Login extends javax.swing.JInternalFrame {
     public Login() {
         initComponents();
         this.setBorder(null);
-        BasicInternalFrameUI gui=(BasicInternalFrameUI) this.getUI();
+        BasicInternalFrameUI gui = (BasicInternalFrameUI) this.getUI();
         gui.setNorthPane(null);
     }
 
@@ -141,7 +142,7 @@ public class Login extends javax.swing.JInternalFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btn_login)
                     .addComponent(btn_register))
-                .addContainerGap(205, Short.MAX_VALUE))
+                .addContainerGap(209, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -168,28 +169,38 @@ public class Login extends javax.swing.JInternalFrame {
 
     private void btn_loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_loginActionPerformed
         // TODO add your handling code here:
-//        try {
-//            String sql = "SELECT * FROM akun WHERE username ='" + txt_username.getText()
-//            + "'AND password = '" + txt_password.getText() + "'";
-//            java.sql.Connection conn=(java.sql.Connection)konekdb.GetConnection();
-//            java.sql.Statement stm=conn.createStatement();
-//            java.sql.PreparedStatement pst=conn.prepareStatement(sql);
-//            java.sql.ResultSet rs=stm.executeQuery(sql);
-//            if (rs.next()) {
-//                if (txt_username.getText().equals(rs.getString("Username"))
-//                    && txt_password.getText().equals(rs.getString("Password"))) {
-//                    JOptionPane.showMessageDialog(null, "berhasil login ");
-//                    this.setVisible(false);
-//                    new Home().setVisible(true);
-//                }
-//            } else {
-//                JOptionPane.showMessageDialog(null, "username atau password salah");
-//
-//            }
-//
-//        } catch (Exception e) {
-//            JOptionPane.showMessageDialog(this, e.getMessage());
+//        String mail = "user";
+//        String pass = "user";
+//        if (txt_username.equals(mail)) {
+//            JOptionPane.showMessageDialog(rootPane, "Kamu goblok");
+//            System.out.println("betul");
 //        }
+//        else if (txt_password.equals(pass)) {
+//                System.out.println("betul");
+//            }
+        try {
+            String sql = "SELECT * FROM akun WHERE username ='" + txt_username.getText()
+                    + "'AND password = '" + txt_password.getText() + "'";
+            java.sql.Connection conn = (java.sql.Connection) konekdb.GetConnection();
+            java.sql.Statement stm = conn.createStatement();
+            java.sql.PreparedStatement pst = conn.prepareStatement(sql);
+            java.sql.ResultSet rs = stm.executeQuery(sql);
+            if (rs.next()) {
+                if (txt_username.getText().equals(rs.getString("Username"))
+                        && txt_password.getText().equals(rs.getString("Password"))) {
+                    JOptionPane.showMessageDialog(null, "berhasil login ");
+                    this.setVisible(false);
+                    new Home().setVisible(true);
+                    this.dispose();
+                }
+            } else {
+                JOptionPane.showMessageDialog(null, "username atau password salah");
+
+            }
+            
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, e.getMessage());
+        }
     }//GEN-LAST:event_btn_loginActionPerformed
 
     private void btn_loginMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_loginMouseEntered
@@ -204,12 +215,12 @@ public class Login extends javax.swing.JInternalFrame {
 
     private void btn_loginMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_loginMouseExited
         // TODO add your handling code here:
-        btn_login.setBackground(new Color(26,127,207));
+        btn_login.setBackground(new Color(26, 127, 207));
     }//GEN-LAST:event_btn_loginMouseExited
 
     private void btn_registerMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_registerMouseExited
         // TODO add your handling code here:
-        btn_register.setBackground(new Color(26,127,207));
+        btn_register.setBackground(new Color(26, 127, 207));
     }//GEN-LAST:event_btn_registerMouseExited
 
 

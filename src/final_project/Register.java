@@ -145,6 +145,10 @@ public class Register extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_username_txt_registActionPerformed
 
     private void submit_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submit_buttonActionPerformed
+        Home hm = new Home();
+        hm.setVisible(true);
+        this.getDesktopPane().add(hm);
+        this.dispose();
 //        try {
 //            String sql = "INSERT INTO akun VALUES ('" + username_txt_regist.getText()
 //            +"','"+pass_txt_regist.getText()+"')";
