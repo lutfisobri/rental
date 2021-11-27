@@ -22,6 +22,7 @@ public class Home extends javax.swing.JInternalFrame {
         this.setBorder(null);
         BasicInternalFrameUI gui=(BasicInternalFrameUI) this.getUI();
         gui.setNorthPane(null);
+        jScrollPane1.getVerticalScrollBar().setUnitIncrement(16);
     }
 
     /**
